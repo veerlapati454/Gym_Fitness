@@ -4,7 +4,6 @@
   "version": "0.0.0",
   "homepage": "https://veerlapati454.github.io/Gym_Fitness",
   "type": "module",
-
   "scripts": {
     "dev": "vite",
     "build": "vite build",
@@ -13,13 +12,11 @@
     "predeploy": "npm run build",
     "deploy": "gh-pages -d dist"
   },
-
   "dependencies": {
     "react": "^19.2.6",
     "react-dom": "^19.2.6",
     "react-router-dom": "^7.16.0"
   },
-
   "devDependencies": {
     "@babel/core": "^7.29.0",
     "@eslint/js": "^10.0.1",

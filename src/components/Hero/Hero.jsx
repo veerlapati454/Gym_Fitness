@@ -2,12 +2,13 @@ import { useState } from "react";
 import { Link } from "react-router-dom";
 import "./Hero.css";
 
-// import strengthImg from "../../assets/strength.jpg";
-// import crossfitImg from "../../assets/crossfit.jpg";
-// import yogaImg from "../../assets/yoga.jpg";
-// import cardioImg from "../../assets/cardio.jpg";
-// import trainerImg from "../../assets/trainer.jpg";
-// import nutritionImg from "../../assets/nutrition.jpg";
+import strengthImg from "../../assets/strength.jfif";
+import crossfitImg from "../../assets/crossfit.jfif";
+import yogaImg from "../../assets/yoga.jfif";
+import cardioImg from "../../assets/cardio.jfif";
+import trainerImg from "../../assets/trainer.jfif";
+import nutritionImg from "../../assets/nutrition.jfif";
+import heroImg from "../../assets/hero.png";
 
 export default function Hero() {
   const [formData, setFormData] = useState({
@@ -78,7 +79,7 @@ export default function Hero() {
         <div className="grid">
 
           <div className="card">
-            {/* <img src={strengthImg} alt="Strength Training" /> */}
+            <img src={strengthImg} alt="Strength Training" />
             <h3>Strength Training</h3>
             <p>
               Build muscle, increase power, and improve body composition
@@ -87,7 +88,7 @@ export default function Hero() {
           </div>
 
           <div className="card">
-            {/* <img src={crossfitImg} alt="CrossFit" /> */}
+            <img src={crossfitImg} alt="CrossFit" />
             <h3>CrossFit Training</h3>
             <p>
               High-intensity workouts that improve endurance,
@@ -96,7 +97,7 @@ export default function Hero() {
           </div>
 
           <div className="card">
-            {/* <img src={yogaImg} alt="Yoga" /> */}
+            <img src={yogaImg} alt="Yoga" />
             <h3>Yoga & Flexibility</h3>
             <p>
               Improve mobility, posture, and mental wellness
@@ -105,7 +106,7 @@ export default function Hero() {
           </div>
 
           <div className="card">
-            {/* <img src={cardioImg} alt="Cardio" /> */}
+            <img src={cardioImg} alt="Cardio" />
             <h3>Cardio Fitness</h3>
             <p>
               Burn calories efficiently and improve cardiovascular
@@ -114,7 +115,7 @@ export default function Hero() {
           </div>
 
           <div className="card">
-            {/* <img src={trainerImg} alt="Personal Training" /> */}
+            <img src={trainerImg} alt="Personal Training" />
             <h3>Personal Training</h3>
             <p>
               One-on-one coaching designed to maximize your
@@ -123,7 +124,7 @@ export default function Hero() {
           </div>
 
           <div className="card">
-            {/* <img src={nutritionImg} alt="Nutrition Coaching" /> */}
+            <img src={nutritionImg} alt="Nutrition Coaching" />
             <h3>Nutrition Coaching</h3>
             <p>
               Customized meal plans and nutrition guidance

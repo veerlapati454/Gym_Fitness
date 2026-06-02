@@ -17,7 +17,7 @@ function NotFound() {
           Let's get you back on track!
         </p>
 
-        <Link to="/home" className="back-btn">
+        <Link to="/" className="back-btn">
           Back to Training
         </Link>
       </div>

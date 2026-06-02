@@ -12,7 +12,7 @@ function Header() {
 
   return (
     <header className="header">
-      <Link to="/home" className="logo">
+      <Link to="/" className="logo">
         <img src={logo} alt="Stackely Fitness"  />
       </Link>
 
@@ -26,7 +26,7 @@ function Header() {
       <nav className={menuOpen ? "nav active" : "nav"}>
         <ul className="nav-links">
           <li>
-            <Link to="/home" onClick={closeMenu}>
+            <Link to="/" onClick={closeMenu}>
               Home
             </Link>
           </li>

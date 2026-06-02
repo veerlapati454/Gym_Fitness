@@ -59,7 +59,7 @@ export default function Hero() {
       {/* HERO SECTION */}
       <section className="hero">
         <div className="hero-content">
-          <span className="tag">#1 FITNESS CENTER</span>
+          <span className="tag">GYMX FITNESS CENTER</span>
 
           <h1>
             BUILD YOUR <span>DREAM BODY</span>

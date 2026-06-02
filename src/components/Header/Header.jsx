@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { Link } from "react-router-dom";
-import logo from "../../assets/stackely.png";
+import logo from "../../assets/stackely.webp"
 import "./Header.css";
 
 function Header() {
@@ -12,8 +12,8 @@ function Header() {
 
   return (
     <header className="header">
-      <Link to="/" className="logo">
-        <img src={logo} alt="Stackely Fitness" />
+      <Link to="/home" className="logo">
+        <img src={logo} alt="Stackely Fitness"  />
       </Link>
 
       <div
@@ -26,7 +26,7 @@ function Header() {
       <nav className={menuOpen ? "nav active" : "nav"}>
         <ul className="nav-links">
           <li>
-            <Link to="/" onClick={closeMenu}>
+            <Link to="/home" onClick={closeMenu}>
               Home
             </Link>
           </li>

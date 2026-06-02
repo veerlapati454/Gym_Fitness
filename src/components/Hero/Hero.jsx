@@ -2,13 +2,23 @@ import { useState } from "react";
 import { Link } from "react-router-dom";
 import "./Hero.css";
 
-import strengthImg from "../../assets/strength.jfif";
-import crossfitImg from "../../assets/crossfit.jfif";
-import yogaImg from "../../assets/yoga.jfif";
-import cardioImg from "../../assets/cardio.jfif";
-import trainerImg from "../../assets/trainer.jfif";
-import nutritionImg from "../../assets/nutrition.jfif";
-import heroImg from "../../assets/hero.png";
+import strengthImg from "../../assets/strength_training.webp";
+import crossfitImg from "../../assets/cross_fit.webp";
+import yogaImg from "../../assets/yoga.webp";
+import cardioImg from "../../assets/cardio.webp";
+import trainerImg from "../../assets/personal.webp";
+import nutritionImg from "../../assets/nutrition.webp";
+import cardio_arenaImg from "../../assets/cardio_arena.webp"
+import communityImg from "../../assets/community.webp"
+import certifiedImg from "../../assets/cretified.webp"
+import free_weightImg from "../../assets/free_weight_zone.webp"
+import group_classesImg from "../../assets/group_classes.webp"
+import locker_roomsImg from "../../assets/locker_rooms.webp"
+import membership_cardImg from "../../assets/membership_card.webp"
+import nutrition_supportImg from "../../assets/nutrition_support.webp"
+import secure_parkingImg from "../../assets/secure_parking.webp"
+import modernImg from "../../assets/modern_equipment.webp"
+
 
 export default function Hero() {
   const [formData, setFormData] = useState({
@@ -142,6 +152,7 @@ export default function Hero() {
         <div className="grid">
 
           <div className="card">
+            <img src={certifiedImg} alt="Certified Trainers" />
             <h3>Certified Trainers</h3>
             <p>
               Learn from experienced professionals who create
@@ -150,6 +161,7 @@ export default function Hero() {
           </div>
 
           <div className="card">
+            <img src={modernImg} alt="MemberShip" />
             <h3>Modern Equipment</h3>
             <p>
               Train using the latest strength and cardio machines
@@ -158,6 +170,7 @@ export default function Hero() {
           </div>
 
           <div className="card">
+            <img src={membership_cardImg} alt="MemberShip" />
             <h3>Flexible Memberships</h3>
             <p>
               Choose affordable plans that suit your schedule,
@@ -166,6 +179,7 @@ export default function Hero() {
           </div>
 
           <div className="card">
+            <img src={communityImg} alt="Community support" />
             <h3>Supportive Community</h3>
             <p>
               Join a motivating environment where members help
@@ -183,6 +197,7 @@ export default function Hero() {
         <div className="grid">
 
           <div className="card">
+            <img src={free_weightImg} alt="Free Weight Zone" />
             <h3>🏋️ Free Weight Zone</h3>
             <p>
               Professional dumbbells, barbells, squat racks,
@@ -191,6 +206,7 @@ export default function Hero() {
           </div>
 
           <div className="card">
+            <img src={cardio_arenaImg} alt="Cardio Arena" />
             <h3>🏃 Cardio Arena</h3>
             <p>
               Treadmills, bikes, rowers, and ellipticals for
@@ -199,6 +215,7 @@ export default function Hero() {
           </div>
 
           <div className="card">
+            <img src={locker_roomsImg} alt="Locker Rooms" />
             <h3>🚿 Locker Rooms</h3>
             <p>
               Spacious lockers, clean showers, and changing
@@ -207,6 +224,7 @@ export default function Hero() {
           </div>
 
           <div className="card">
+            <img src={group_classesImg} alt="Group Classes" />
             <h3>🧘 Group Classes</h3>
             <p>
               Participate in Yoga, HIIT, Zumba, and
@@ -215,6 +233,7 @@ export default function Hero() {
           </div>
 
           <div className="card">
+            <img src={nutrition_supportImg} alt="Nutrition Support" />
             <h3>🥗 Nutrition Support</h3>
             <p>
               Personalized meal guidance and nutritional
@@ -223,6 +242,7 @@ export default function Hero() {
           </div>
 
           <div className="card">
+            <img src={secure_parkingImg} alt="Secure Parking" />
             <h3>🅿️ Secure Parking</h3>
             <p>
               Convenient parking facilities available
@@ -233,33 +253,75 @@ export default function Hero() {
         </div>
       </section>
 
-      {/* MEMBERSHIP */}
-      <section className="section alt">
-        <h2>Membership Plans</h2>
+     {/* MEMBERSHIP */}
+   <section className="section alt membership-section">
+     <h2>Membership Plans</h2>
 
-        <div className="grid">
+     <div className="grid">
 
-          <div className="card">
-            <h3>Basic</h3>
-            <h1>₹999</h1>
-            <p>Access to gym equipment and locker facility.</p>
-          </div>
+      {/* BASIC PLAN */}
+     <div className="card membership-card">
+       <h3>Basic Plan</h3>
+       <h1>₹999<span>/month</span></h1>
 
-          <div className="card featured">
-            <h3>Premium</h3>
-            <h1>₹1999</h1>
-            <p>Personal trainer, diet plan, and group classes.</p>
-          </div>
+       <ul>
+        <li>✔ Full access to gym equipment</li>
+        <li>✔ Locker facility</li>
+        <li>✔ Free fitness assessment</li>
+        <li>✔ Cardio & Strength Training Area</li>
+        <li>✔ Open Gym Access (6 AM - 10 PM)</li>
+       </ul>
 
-          <div className="card">
-            <h3>Elite</h3>
-            <h1>₹2999</h1>
-            <p>All premium benefits with priority support.</p>
-          </div>
+       <p>
+        Perfect for beginners looking to start their fitness journey
+        with complete access to essential gym facilities.
+       </p>
+     </div>
 
-        </div>
-      </section>
+    {/* PREMIUM PLAN */}
+    <div className="card membership-card featured">
+      <h3>Premium Plan</h3>
+      <h1>₹1999<span>/month</span></h1>
 
+      <ul>
+        <li>✔ Everything in Basic Plan</li>
+        <li>✔ Personal Trainer Guidance</li>
+        <li>✔ Customized Diet Plan</li>
+        <li>✔ Yoga & Zumba Classes</li>
+        <li>✔ Monthly Progress Tracking</li>
+        <li>✔ Priority Workout Assistance</li>
+      </ul>
+
+      <p>
+        Ideal for members who want professional coaching,
+        structured nutrition, and faster results.
+      </p>
+    </div>
+
+    {/* ELITE PLAN */}
+    <div className="card membership-card">
+      <h3>Elite Plan</h3>
+      <h1>₹2999<span>/month</span></h1>
+
+      <ul>
+        <li>✔ Everything in Premium Plan</li>
+        <li>✔ Dedicated Personal Trainer</li>
+        <li>✔ Advanced Body Analysis</li>
+        <li>✔ VIP Locker Access</li>
+        <li>✔ Exclusive Fitness Workshops</li>
+        <li>✔ Flexible Workout Scheduling</li>
+        <li>✔ Priority Support & Consultation</li>
+      </ul>
+
+      <p>
+        Designed for serious fitness enthusiasts who want premium
+        facilities, expert guidance, and maximum performance.
+      </p>
+    </div>
+
+    </div>
+  </section>
+ 
       {/* CONTACT */}
       <section className="section">
         <h2>Contact Us</h2>

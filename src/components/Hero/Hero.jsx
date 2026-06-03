@@ -18,7 +18,7 @@ import membership_cardImg from "../../assets/membership_card.webp"
 import nutrition_supportImg from "../../assets/nutrition_support.webp"
 import secure_parkingImg from "../../assets/secure_parking.webp"
 import modernImg from "../../assets/modern_equipment.webp"
-
+import heroImg from "../../assets/hero.webp"
 
 export default function Hero() {
   const [formData, setFormData] = useState({
@@ -56,31 +56,62 @@ export default function Hero() {
 
   return (
     <>
-      {/* HERO SECTION */}
-      <section className="hero">
-        <div className="hero-content">
-          <span className="tag">GYMX FITNESS CENTER</span>
+    <section className="hero">
+  <img src={heroImg} alt="Gym Fitness" className="hero-image" />
 
-          <h1>
-            BUILD YOUR <span>DREAM BODY</span>
-          </h1>
+  <div className="hero-overlay"></div>
 
-          <p>
-            Transform your body and mind with expert trainers,
-            premium equipment, and personalized workout programs.
-          </p>
+  <div className="hero-content">
+    
+    <h1>
+      BUILD YOUR <span>DREAM BODY</span>
+    </h1>
 
-          <div className="hero-buttons">
-            <Link to="/get-started" className="primary-btn">
-              Get Started
-            </Link>
+    <p>
+      Transform your body and mind with expert trainers,
+      premium equipment, and personalized workout programs.
+    </p>
 
-            <Link to="/programs" className="secondary-btn">
-              View Programs
-            </Link>
-          </div>
-        </div>
-      </section>
+    <div className="hero-buttons">
+      <Link to="/get-started" className="primary-btn">
+        Get Started
+      </Link>
+
+      <Link to="/programs" className="secondary-btn">
+        View Programs
+      </Link>
+    </div>
+  </div>
+</section>
+      {/* ABOUT US */}
+<section className="section about-section">
+  <div className="about-container">
+
+    <div className="about-content">
+      <span className="about-tag">ABOUT GYMX FITNESS</span>
+
+      <h2>Your Destination for a Healthier Lifestyle</h2>
+
+      <p>
+        At GymX Fitness Center, we are committed to helping individuals
+        achieve their fitness goals in a motivating and supportive
+        environment. Our facility is equipped with modern workout
+        equipment, dedicated training zones, and comprehensive fitness
+        programs designed for all fitness levels.
+      </p>
+
+      <p>
+        Whether your goal is building strength, improving endurance,
+        increasing flexibility, or maintaining an active lifestyle,
+        GymX provides the resources and guidance needed to stay
+        consistent and achieve long-term results.
+      </p>
+
+     
+    </div>
+
+  </div>
+</section>
 
       {/* FITNESS PROGRAMS */}
       <section className="section">

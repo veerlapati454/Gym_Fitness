@@ -17,11 +17,11 @@ function Header() {
       </Link>
 
       <div
-        className="menu-icon"
-        onClick={() => setMenuOpen(!menuOpen)}
-      >
-        ☰
-      </div>
+  className="menu-icon"
+  onClick={() => setMenuOpen(!menuOpen)}
+>
+  {menuOpen ? "✕" : "☰"}
+</div>
 
       <nav className={menuOpen ? "nav active" : "nav"}>
         <ul className="nav-links">
@@ -52,6 +52,10 @@ function Header() {
           <li>
             <Link to="/facilities" onClick={closeMenu}>
               Facilities</Link>
+          </li>
+          <li>
+            <Link to="/About-us" onClick={closeMenu}>
+              About us</Link>
           </li>
         </ul>
       </nav>

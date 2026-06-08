@@ -291,7 +291,7 @@ export default function Hero() {
      <div className="grid">
 
       {/* BASIC PLAN */}
-     <div className="card membership-card">
+     <div className=" membership-card">
        <h3>Basic Plan</h3>
        <h1>₹999<span>/month</span></h1>
 
@@ -330,7 +330,7 @@ export default function Hero() {
     </div>
 
     {/* ELITE PLAN */}
-    <div className="card membership-card">
+    <div className=" membership-card">
       <h3>Elite Plan</h3>
       <h1>₹2999<span>/month</span></h1>
 

@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { Link } from "react-router-dom";
-import logo from "../../assets/stackely.webp"
+import logo from "../../assets/stackely.webp";
 import "./Header.css";
 
 function Header() {
@@ -13,15 +13,15 @@ function Header() {
   return (
     <header className="header">
       <Link to="/" className="logo">
-        <img src={logo} alt="Stackely Fitness"  />
+        <img src={logo} alt="Stackely Fitness" />
       </Link>
 
       <div
-  className="menu-icon"
-  onClick={() => setMenuOpen(!menuOpen)}
->
-  {menuOpen ? "✕" : "☰"}
-</div>
+        className="menu-icon"
+        onClick={() => setMenuOpen(!menuOpen)}
+      >
+        {menuOpen ? "✕" : "☰"}
+      </div>
 
       <nav className={menuOpen ? "nav active" : "nav"}>
         <ul className="nav-links">
@@ -50,13 +50,18 @@ function Header() {
           </li>
 
           <li>
-            <Link to="/facilities" onClick={closeMenu}>
-              Facilities</Link>
+            <Link to="/about-us" onClick={closeMenu}>
+              About Us
+            </Link>
           </li>
+
           <li>
-            <Link to="/About-us" onClick={closeMenu}>
-              About us</Link>
+            <Link to="/login" onClick={closeMenu}>
+              Login
+            </Link>
           </li>
+
+          
         </ul>
       </nav>
     </header>

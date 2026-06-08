@@ -1,104 +1,250 @@
-.header {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  padding: 18px 8%;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  background: white;
-  backdrop-filter: blur(15px);
-  box-shadow: 0 2px 15px rgba(0, 0, 0, 0.08);
-  z-index: 1000;
+/* ===========================
+   STACKLY — Header Styles
+   Aesthetic: Sleek Athletic
+=========================== */
+
+@import url('https://fonts.googleapis.com/css2?family=Barlow:wght@400;500;600;700&family=Barlow+Condensed:wght@700;800&display=swap');
+
+:root {
+  --clr-bg: #ffffff;
+  --clr-text: #111827;
+  --clr-text-muted: #4b5563;
+  --clr-accent: #3b82f6;
+  --clr-accent-hover: #2563eb;
+  --clr-active-border: #111827;
+  --clr-logout: #ef4444;
+  --clr-logout-hover: #dc2626;
+  --header-height: 68px;
+  --shadow: 0 1px 0 rgba(0,0,0,0.08), 0 4px 16px rgba(0,0,0,0.06);
+  --transition: 0.22s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
+/* ── Base Header ── */
+.header {
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: var(--header-height);
+  padding: 0 clamp(1.25rem, 4vw, 2.5rem);
+  background: var(--clr-bg);
+  box-shadow: var(--shadow);
+  font-family: 'Barlow', sans-serif;
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+}
+
+/* ── Logo ── */
 .logo {
   display: flex;
   align-items: center;
+  text-decoration: none;
+  flex-shrink: 0;
 }
 
 .logo img {
-  height: 55px;
+  height: 36px;
   width: auto;
-  object-fit: contain;
+  display: block;
+  transition: opacity var(--transition);
 }
 
-/* Desktop Navigation */
-.nav-links {
+.logo:hover img {
+  opacity: 0.82;
+}
+
+/* ── Nav ── */
+.nav {
   display: flex;
-  gap: 35px;
+  align-items: center;
+}
+
+.nav-links {
   list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  align-items: center;
+  gap: 0.25rem;
 }
 
-.nav-links a {
-  text-decoration: none;
-  color: #111827;
-  font-weight: 600;
+/* ── Nav Links ── */
+.nav-links li a {
   position: relative;
-  transition: 0.3s;
+  display: inline-flex;
+  align-items: center;
+  padding: 0.45rem 0.9rem;
+  font-size: 0.925rem;
+  font-weight: 500;
+  letter-spacing: 0.01em;
+  color: var(--clr-text-muted);
+  text-decoration: none;
+  border-radius: 6px;
+  border: 1.5px solid transparent;
+  transition:
+    color var(--transition),
+    background var(--transition),
+    border-color var(--transition);
 }
 
-.nav-links a:hover {
-  color: #ff5e00;
+.nav-links li a:hover {
+  color: var(--clr-text);
+  background: rgba(59, 130, 246, 0.06);
 }
 
-.nav-links a::after {
-  content: "";
-  position: absolute;
-  left: 0;
-  bottom: -5px;
-  width: 0%;
-  height: 2px;
-  background: #ff5e00;
-  transition: 0.3s;
+/* Active state — mimics the boxed "Home" in the screenshot */
+.nav-links li a.active,
+.nav-links li a[aria-current="page"] {
+  color: var(--clr-text);
+  font-weight: 600;
+  border-color: var(--clr-active-border);
+  background: transparent;
 }
 
-.nav-links a:hover::after {
-  width: 100%;
+/* "Login" link — slightly distinct */
+.nav-links li:last-child a {
+  color: var(--clr-text);
+  font-weight: 600;
 }
 
-/* Hamburger */
+.nav-links li:last-child a:hover {
+  background: rgba(17, 24, 39, 0.06);
+}
+
+/* ── Dashboard / Logged-in state ── */
+.nav-links li a[href="/dashboard"] {
+  color: var(--clr-accent);
+  font-weight: 600;
+}
+
+.nav-links li a[href="/dashboard"]:hover {
+  background: rgba(59, 130, 246, 0.1);
+  color: var(--clr-accent-hover);
+}
+
+/* ── Logout Button ── */
+.logout-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.45rem 1.1rem;
+  font-family: 'Barlow', sans-serif;
+  font-size: 0.925rem;
+  font-weight: 600;
+  letter-spacing: 0.01em;
+  color: #ffffff;
+  background: var(--clr-logout);
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  transition:
+    background var(--transition),
+    transform var(--transition),
+    box-shadow var(--transition);
+}
+
+.logout-btn:hover {
+  background: var(--clr-logout-hover);
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgba(239, 68, 68, 0.35);
+}
+
+.logout-btn:active {
+  transform: translateY(0);
+  box-shadow: none;
+}
+
+/* ── Hamburger / Menu Icon ── */
 .menu-icon {
   display: none;
-  font-size: 2rem;
+  font-size: 1.4rem;
+  line-height: 1;
   cursor: pointer;
-  color: #111827;
+  color: var(--clr-text);
+  padding: 0.35rem 0.5rem;
+  border-radius: 6px;
+  transition: background var(--transition), color var(--transition);
+  user-select: none;
 }
 
-/* Mobile */
+.menu-icon:hover {
+  background: rgba(17, 24, 39, 0.06);
+}
+
+/* =========================================
+   RESPONSIVE — Mobile (≤ 768px)
+========================================= */
 @media (max-width: 768px) {
   .menu-icon {
-    display: block;
+    display: flex;
+    align-items: center;
+    justify-content: center;
   }
 
+  /* Slide-down drawer */
   .nav {
-    position: absolute;
-    top: 100%;
-    right: -100%;
-    width: 250px;
-    background: white;
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
-    transition: 0.4s ease;
-    border-radius: 0 0 12px 12px;
+    position: fixed;
+    top: var(--header-height);
+    left: 0;
+    right: 0;
+    background: var(--clr-bg);
+    box-shadow: 0 8px 24px rgba(0,0,0,0.1);
+    padding: 1rem 1.25rem 1.5rem;
+    transform: translateY(-8px);
+    opacity: 0;
+    pointer-events: none;
+    transition:
+      opacity var(--transition),
+      transform var(--transition);
   }
 
   .nav.active {
-    right: 0;
+    opacity: 1;
+    transform: translateY(0);
+    pointer-events: auto;
   }
 
   .nav-links {
     flex-direction: column;
+    align-items: stretch;
+    gap: 0.2rem;
+  }
+
+  .nav-links li a {
+    display: block;
+    padding: 0.75rem 1rem;
+    font-size: 1rem;
+    border-radius: 8px;
+    border: none;
+  }
+
+  .nav-links li a.active,
+  .nav-links li a[aria-current="page"] {
+    border: none;
+    background: rgba(17, 24, 39, 0.05);
+  }
+
+  .logout-btn {
+    width: 100%;
+    padding: 0.75rem 1rem;
+    font-size: 1rem;
+    border-radius: 8px;
+    margin-top: 0.25rem;
+  }
+}
+
+/* =========================================
+   RESPONSIVE — Tablet (769–1024px)
+========================================= */
+@media (min-width: 769px) and (max-width: 1024px) {
+  .nav-links {
     gap: 0;
-    padding: 20px;
   }
 
-  .nav-links li {
-    padding: 15px 0;
-    border-bottom: 1px solid #eee;
-  }
-
-  .nav-links li:last-child {
-    border-bottom: none;
+  .nav-links li a {
+    padding: 0.45rem 0.65rem;
+    font-size: 0.875rem;
   }
 }

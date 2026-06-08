@@ -12,12 +12,12 @@ const LOGO_SRC = logo; // set to your logo import when ready
 
 const NAV_LINKS = [
   { to: "/dashboard",  label: "Dashboard",  icon: "📊" },
-  { to: "/workouts",   label: "Workouts",   icon: "🏋️" },
-  { to: "/nutrition",  label: "Nutrition",  icon: "🥗" },
-  { to: "/progress",   label: "Progress",   icon: "📈" },
-  { to: "/membership", label: "Membership", icon: "⭐" },
-  { to: "/profile",    label: "Profile",    icon: "👤" },
-  { to: "/settings",   label: "Settings",   icon: "⚙️" },
+  { to: "/dashboard",   label: "Workouts",   icon: "🏋️" },
+  { to: "/dashboard",  label: "Nutrition",  icon: "🥗" },
+  { to: "/dashboard",   label: "Progress",   icon: "📈" },
+  { to: "/dashboard", label: "Membership", icon: "⭐" },
+  { to: "/dashboard",    label: "Profile",    icon: "👤" },
+  { to: "/dashboard",   label: "Settings",   icon: "⚙️" },
 ];
 
 function Sidebar() {

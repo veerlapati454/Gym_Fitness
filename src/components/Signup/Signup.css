@@ -123,6 +123,92 @@
   text-decoration: underline;
 }
 
+.password-wrapper {
+  position: relative;
+}
+
+.password-wrapper input {
+  width: 100%;
+}
+
+.password-toggle {
+  position: absolute;
+  top: 50%;
+  right: 14px;
+  transform: translateY(-50%);
+  cursor: pointer;
+  font-size: 18px;
+}
+
+.error-text {
+  display: block;
+  color: #ff4d4f;
+  margin-top: 5px;
+  font-size: 13px;
+}
+
+.social-login {
+  margin-top: 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.social-divider {
+  display: flex;
+  align-items: center;
+  margin: 10px 0;
+  color: #999;
+  font-size: 14px;
+}
+
+.social-divider::before,
+.social-divider::after {
+  content: "";
+  flex: 1;
+  height: 1px;
+  background: rgba(255, 255, 255, 0.15);
+}
+
+.social-divider span {
+  padding: 0 14px;
+}
+
+.social-btn {
+  width: 100%;
+  border: none;
+  border-radius: 14px;
+  padding: 14px 18px;
+  font-size: 15px;
+  font-weight: 600;
+  cursor: pointer;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+
+  transition: all 0.3s ease;
+}
+
+.social-btn svg {
+  font-size: 18px;
+}
+
+.facebook-btn {
+  background: linear-gradient(
+    135deg,
+    #1877f2,
+    #0d5fd4
+  );
+  color: white;
+}
+
+.facebook-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(24, 119, 242, 0.35);
+}
+
 @media (max-width: 600px) {
   .signup-card {
     padding: 30px 25px;

@@ -159,6 +159,40 @@
   z-index: -1;
 }
 
+.password-wrapper {
+  position: relative;
+}
+
+.password-wrapper input {
+  width: 100%;
+}
+
+.error-text {
+  display: block;
+  margin-top: 6px;
+  color: #ff4d4f;
+  font-size: 13px;
+  font-weight: 500;
+}
+
+.password-toggle {
+  position: absolute;
+  right: 15px;
+  top: 50%;
+  transform: translateY(-50%);
+  cursor: pointer;
+  color: #666;
+  font-size: 18px;
+}
+
+.input-group select {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  outline: none;
+}
+
 @keyframes fadeIn {
   from {
     opacity: 0;

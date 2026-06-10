@@ -59,8 +59,8 @@
 
 .sidebar::-webkit-scrollbar { display: none; }
 
-.sidebar-close  { display: none; }
-.mobile-topbar  { display: none; }
+.sidebar-close   { display: none; }
+.mobile-topbar   { display: none; }
 .sidebar-overlay { display: none; }
 
 /* ══════════════════════════════
@@ -72,7 +72,6 @@
   flex-shrink: 0;
 }
 
-/* ── Real logo image (when LOGO_SRC is set) ── */
 .sidebar-logo-img {
   display: block;
   width: 100%;
@@ -83,7 +82,6 @@
   object-position: left center;
 }
 
-/* ── Placeholder (shown until real logo is provided) ── */
 .sidebar-logo-placeholder {
   display: flex;
   align-items: center;
@@ -112,10 +110,7 @@
   justify-content: center;
 }
 
-.logo-placeholder-icon svg {
-  width: 100%;
-  height: 100%;
-}
+.logo-placeholder-icon svg { width: 100%; height: 100%; }
 
 .logo-placeholder-text {
   display: flex;
@@ -144,56 +139,6 @@
 }
 
 /* ══════════════════════════════
-   USER CARD
-══════════════════════════════ */
-.sidebar-user {
-  display: flex;
-  align-items: center;
-  gap: 0.85rem;
-  padding: 1.1rem 1.5rem;
-  border-bottom: 1px solid var(--border);
-  flex-shrink: 0;
-}
-
-.avatar {
-  width: 42px;
-  height: 42px;
-  border-radius: 50%;
-  background: var(--accent);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-family: var(--font-display);
-  font-size: 1.15rem;
-  font-weight: 800;
-  color: #fff;
-  flex-shrink: 0;
-  box-shadow: 0 0 0 3px rgba(255, 107, 53, 0.22);
-}
-
-.sidebar-user-info { min-width: 0; }
-
-.sidebar-user h4 {
-  font-family: var(--font-body);
-  font-size: 0.88rem;
-  font-weight: 600;
-  color: var(--text);
-  white-space: nowrap;
-  overflow: hidden;
-  text-overflow: ellipsis;
-  margin: 0 0 2px;
-}
-
-.sidebar-user p {
-  font-size: 0.73rem;
-  color: var(--text-muted);
-  white-space: nowrap;
-  overflow: hidden;
-  text-overflow: ellipsis;
-  margin: 0;
-}
-
-/* ══════════════════════════════
    SECTION LABEL
 ══════════════════════════════ */
 .sidebar-section-label {
@@ -208,7 +153,7 @@
 }
 
 /* ══════════════════════════════
-   NAV LINKS
+   NAV LINKS — now <button> based
 ══════════════════════════════ */
 .sidebar-links {
   list-style: none;
@@ -219,38 +164,44 @@
 
 .sidebar-links li { margin-bottom: 2px; }
 
-.sidebar-links a {
+/* Shared button styles — replaces the old <a> styles */
+.nav-btn {
   display: flex;
   align-items: center;
   gap: 0.75rem;
+  width: 100%;
   padding: 0.65rem 0.85rem;
   border-radius: var(--radius-sm);
   font-family: var(--font-body);
   font-size: 0.88rem;
   font-weight: 500;
   color: var(--text-muted);
-  text-decoration: none;
+  background: none;
+  border: none;
+  cursor: pointer;
+  text-align: left;
   position: relative;
   min-height: 44px;
+  -webkit-tap-highlight-color: transparent;
   transition:
     background var(--transition),
     color var(--transition),
     padding-left var(--transition);
 }
 
-.sidebar-links a:hover {
+.nav-btn:hover {
   background: var(--bg-item-hover);
   color: var(--text);
   padding-left: 1.05rem;
 }
 
-.sidebar-links a.active {
+.nav-btn.active {
   background: var(--bg-item-active);
   color: var(--accent);
   font-weight: 600;
 }
 
-.sidebar-links a.active::before {
+.nav-btn.active::before {
   content: '';
   position: absolute;
   left: 0;
@@ -309,9 +260,7 @@
   border-color: rgba(239, 68, 68, 0.25);
 }
 
-.sidebar-logout:active {
-  background: rgba(239, 68, 68, 0.18);
-}
+.sidebar-logout:active { background: rgba(239, 68, 68, 0.18); }
 
 /* ══════════════════════════════════════════
    RESPONSIVE — ≤ 1024px
@@ -330,13 +279,12 @@
     background: var(--bg-sidebar);
     border-bottom: 1px solid var(--border);
     align-items: center;
-    justify-content: space-between;
+    /* No justify needed — logo is absolutely centered */
     padding: 0 1rem;
     z-index: 280;
-    gap: 0.75rem;
   }
 
-  /* ── Hamburger ── */
+  /* ── Hamburger — stays left ── */
   .hamburger {
     width: 44px;
     height: 44px;
@@ -351,6 +299,8 @@
     border-radius: var(--radius-sm);
     padding: 0;
     flex-shrink: 0;
+    position: relative;
+    z-index: 1;
     -webkit-tap-highlight-color: transparent;
     transition: background var(--transition);
   }
@@ -367,60 +317,41 @@
     transition: transform var(--transition), opacity var(--transition);
   }
 
-  /* ── Topbar logo area ── */
+  /* ── Logo wrap — absolutely centered in topbar ── */
   .topbar-logo-wrap {
-    flex: 1;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
     display: flex;
-    justify-content: center;
     align-items: center;
-    overflow: hidden;
+    justify-content: center;
+    pointer-events: none; /* hamburger stays clickable */
   }
 
-  /* Real logo in topbar */
   .topbar-logo-img {
     display: block;
-    height: 40px;
+    height: 32px;
     width: auto;
-    max-width: 160px;
+    max-width: 140px;
     object-fit: contain;
   }
 
-  /* Placeholder in topbar */
   .topbar-logo-placeholder {
     display: flex;
     align-items: center;
-    gap: 0.5rem;
-    padding: 0.35rem 0.75rem;
-    border: 1.5px dashed rgba(255, 107, 53, 0.4);
-    border-radius: var(--radius-sm);
-    color: var(--text-muted);
-    font-family: var(--font-body);
-    font-size: 0.8rem;
-    font-weight: 600;
-    letter-spacing: 0.06em;
+    gap: 0.4rem;
+    color: var(--text);
+    font-family: var(--font-display);
+    font-size: 1.1rem;
+    font-weight: 700;
+    letter-spacing: 0.1em;
     white-space: nowrap;
   }
 
   .topbar-logo-placeholder svg {
-    width: 22px;
-    height: 22px;
+    width: 20px;
+    height: 20px;
     color: var(--accent);
-    flex-shrink: 0;
-  }
-
-  /* ── Topbar avatar ── */
-  .topbar-avatar {
-    width: 34px;
-    height: 34px;
-    border-radius: 50%;
-    background: var(--accent);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-family: var(--font-display);
-    font-size: 0.9rem;
-    font-weight: 800;
-    color: #fff;
     flex-shrink: 0;
   }
 
@@ -488,10 +419,6 @@
     width: 100vw;
     border-right: none;
   }
-
-  .topbar-logo-placeholder span {
-    display: none; /* show only icon on very small screens */
-  }
 }
 
 /* ══════════════════════════════
@@ -500,7 +427,7 @@
 @media (prefers-reduced-motion: reduce) {
   .sidebar,
   .sidebar-overlay,
-  .sidebar-links a,
+  .nav-btn,
   .hamburger span {
     transition: none;
   }

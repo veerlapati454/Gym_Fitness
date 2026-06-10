@@ -17,7 +17,7 @@ const Dashboard = () => {
         <div className="dashboard-header">
           <div className="header-left">
             <p className="header-date">Monday, June 08 · Week 24</p>
-            <h1>Welcome Back, Alex <span className="wave">💪</span></h1>
+            <h1>Welcome Back<span className="wave">💪</span></h1>
             <p className="header-sub">
               Stay consistent. Every workout brings you one step closer to your goals.
             </p>
@@ -36,9 +36,8 @@ const Dashboard = () => {
         {/* ── Profile + Quick Stats Row ── */}
         <div className="top-row">
           <div className="profile-card">
-            <div className="profile-avatar">A</div>
             <div className="profile-info">
-              <h2>Alex Johnson</h2>
+              
               <span className="membership-badge">⭐ Premium Member</span>
               <div className="profile-meta">
                 <span>🎂 24 yrs</span>

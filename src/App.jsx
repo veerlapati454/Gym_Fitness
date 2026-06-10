@@ -6,6 +6,7 @@ import Login from "./components/Login/Login";
 import Signup from "./components/Signup/Signup";
 import Dashboard from "./components/Dashboard/Dashboard";
 import NotFound from "./components/NotFound/NotFound";
+import AdminDashboard from "./components/AdminDashboard/AdminDashboard";
 
 import { AuthProvider } from "./context/AuthContext";
 
@@ -21,6 +22,7 @@ function App() {
             <Route path="/dashboard" element={<Dashboard />} />
             <Route path="*" element={<NotFound />} />
           </Route>
+            <Route path="/admin-dashboard" element={<AdminDashboard/> } />
         </Routes>
       </HashRouter>
     </AuthProvider>
